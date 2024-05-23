@@ -1,36 +1,15 @@
+// select modal-btn,modal-overlay,close-btn
+// listen for click events on modal-btn and close-btn
+// when user clicks modal-btn add .open-modal to modal-overlay
+// when user clicks close-btn remove .open-modal from modal-overlay
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Modal</title>
-    <!-- font-awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
-    />
-    <!-- styles -->
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <!-- hero -->
-    <header class="hero">
-      <div class="banner">
-        <h1>modal project</h1>
-        <button class="btn modal-btn">
-          open modal
-        </button>
-      </div>
-    </header>
-    <!-- modal -->
-    <div class="modal-overlay">
-      <div class="modal-container">
-        <h3>modal content</h3>
-        <button class="close-btn"><i class="fas fa-times"></i></button>
-      </div>
-    </div>
-    <!-- javascript -->
-    <script src="app.js"></script>
-  </body>
-</html>
+const modalBtn = document.querySelector(".modal-btn");
+const modal = document.querySelector(".modal-overlay");
+const closeBtn = document.querySelector(".close-btn");
+
+modalBtn.addEventListener("click", function () {
+  modal.classList.add("open-modal");
+});
+closeBtn.addEventListener("click", function () {
+  modal.classList.remove("open-modal");
+});
